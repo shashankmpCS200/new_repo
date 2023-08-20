@@ -58,8 +58,7 @@
 						displayContainer.appendChild(scholarshipsCard);
 
         } catch (error) {
-            console.log(error);
-            alert("Registration failed");
+            alert("Scholarship not found!!");
         }
     };
 

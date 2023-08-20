@@ -144,7 +144,7 @@ router.post("/scholarships/sort",async (req,res)=>{
         // const scholarshipArray=await Scholarship.find({})
         const scholarshipArray=await Scholarship.find({
             gender:{ $in: [req.body.gender, "neutral"] },
-            age:{$lte:req.body.age},
+            age:{$gte:req.body.age},
             religion:{ $in: [req.body.religion, "neutral"] },
             caste:{ $in: [req.body.caste, "neutral"] },
             district:{ $in: [req.body.district, "neutral"] },
@@ -198,7 +198,7 @@ router.post("/scholarships/search",async (req,res)=>{
 
         const name = req.body.name;
 
-         console.log(name);
+        //console.log(name);
        
         const scholarshipArray=await Scholarship.find({name:name})
 

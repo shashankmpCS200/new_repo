@@ -1,3 +1,5 @@
+const dotenv = require("dotenv")
+dotenv.config({path:'./config.env'})
 const express = require("express");
 require("../src/db/conn");
 const router = require("../src/routers/router")
@@ -9,7 +11,7 @@ const mime=require("mime")
 const path=require("path")
 const app = express();
 
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT;
 // console.log("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-frontend")
 // app.use(express.static("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-frontend"));
 mime.types['js'] = 'application/javascript';
