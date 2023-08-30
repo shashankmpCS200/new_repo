@@ -7,14 +7,17 @@ const contactus = require("../models/contactus")
 //CREATING NEW USER
 
 // router.use(express.static("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-frontend"));
-const rootPath="C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-backend/"
+//const rootPath="C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-backend/"
+
+const rootPath = path.join(__dirname,"..","..")
+console.log(rootPath)
 router.get("/",(req,res)=>{
-    res.sendFile("pages/index.html",{root:rootPath})
+    res.sendFile("public/index.html",{root:rootPath})
 })
 
 
 router.get("/register",(req,res)=>{
-    res.sendFile("pages/register.html",{root:rootPath})
+    res.sendFile("public/register.html",{root:rootPath})
 })
 
 router.post("/register",async (req,res)=>{
@@ -60,7 +63,7 @@ router.post("/register",async (req,res)=>{
 //LOGIN 
 
 router.get("/login",(req,res)=>{
-    res.sendFile("pages/login.html",{root:rootPath})
+    res.sendFile("public/login.html",{root:rootPath})
 })
 
 
@@ -99,7 +102,7 @@ router.post("/login",async(req,res)=>{
 
 // FORGOT PASSWORD
 router.get("/login/forgotpassword/:id",async(req,res)=>{
-    res.sendFile("pages/index.html",{root:rootPath})
+    res.sendFile("public/index.html",{root:rootPath})
 })
 router.patch("/login/forgotpassword/:id", async (req,res)=>{
 
@@ -131,7 +134,7 @@ router.patch("/login/forgotpassword/:id", async (req,res)=>{
 
 //Scholarships
 router.get("/scholarships",async(req,res)=>{
-    res.sendFile("pages/scholarships.html",{root:rootPath})
+    res.sendFile("public/scholarships.html",{root:rootPath})
 })
 router.post("/scholarships/sort",async (req,res)=>{
     try  {
@@ -217,10 +220,10 @@ router.post("/scholarships/search",async (req,res)=>{
 })
 
 router.get("/aboutus",(req,res)=>{
-    res.sendFile("pages/aboutus.html",{root:rootPath})
+    res.sendFile("public/aboutus.html",{root:rootPath})
 })
 router.get("/contactus",(req,res)=>{
-    res.sendFile("pages/contactus.html",{root:rootPath})
+    res.sendFile("public/contactus.html",{root:rootPath})
 })
 
 router.post("/contactus",async (req,res)=>{

@@ -19,8 +19,10 @@ mime.types['js'] = 'application/javascript';
 app.use(cors())
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-backend"));
-
+//app.use(express.static("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-backend"));
+const staticpath =path.join(__dirname,"../public")
+app.use(express.static(staticpath));
+//console.log(staticpath)
 
 app.use(router)
 
