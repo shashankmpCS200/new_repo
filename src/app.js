@@ -11,7 +11,7 @@ const mime=require("mime")
 const path=require("path")
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 // console.log("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-frontend")
 // app.use(express.static("C:/Users/Shashank Patil/OneDrive/Desktop/HTML/backend/scholarscrate-frontend"));
 mime.types['js'] = 'application/javascript';
