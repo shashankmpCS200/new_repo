@@ -34,8 +34,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.shashankmpatil200 }}
-          password: ${{ secrets.Shanku@2002 }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Push Docker image to Docker Hub
         run: docker push shashankmpatil200/new_repo:0.0.1.RELEASE
